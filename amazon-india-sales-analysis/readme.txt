@@ -1,5 +1,7 @@
 # Amazon India Sales Analysis
 
+datasets : https://drive.google.com/drive/folders/1RPrlzuw_B6GERsiu7S8qXeaNV7jxXwc4?usp=drive_link
+
 ## Overview
 This project analyzes Amazon India sales transaction data containing approximately **120,000+ rows**.
 The dataset represents real-world e-commerce transactions and includes significant **data quality challenges**, particularly in geographic fields.
@@ -62,3 +64,4 @@ The goal of the cleaning process was not perfect normalization, but **usable and
 
 ## Notes
 This project focuses on **realistic data challenges** and practical data cleaning approaches commonly used in business intelligence workflows.
+
