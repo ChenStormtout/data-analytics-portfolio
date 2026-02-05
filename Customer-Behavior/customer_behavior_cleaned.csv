@@ -1,0 +1,351 @@
+Customer ID;Gender;Age;City;Items Purchased;Discount Applied;Days Since Last Purchase;Average Rating;Satisfaction Level;Total Spend;Membership Type;Spender Group
+101;Female;29;New York;14;TRUE;25;4.6;Satisfied;11202;Gold;High Spender
+102;Male;34;Los Angeles;11;FALSE;18;4.1;Neutral;7805;Silver;Medium Spender
+103;Female;43;Chicago;9;TRUE;42;3.4;Unsatisfied;51075;Bronze;High Spender
+104;Male;30;San Francisco;19;FALSE;12;4.7;Satisfied;14803;Gold;High Spender
+105;Male;27;Miami;13;TRUE;55;4.0;Unsatisfied;7204;Silver;Medium Spender
+106;Female;37;Houston;8;FALSE;22;3.1;Neutral;4408;Bronze;Low Spender
+107;Female;31;New York;15;TRUE;28;4.5;Satisfied;11506;Gold;High Spender
+108;Male;35;Los Angeles;12;FALSE;14;4.2;Neutral;8009;Silver;Medium Spender
+109;Female;41;Chicago;10;TRUE;40;3.6;Unsatisfied;49525;Bronze;High Spender
+110;Male;28;San Francisco;21;FALSE;9;4.8;Satisfied;15201;Gold;High Spender
+111;Male;32;Miami;11;TRUE;34;3.8;Unsatisfied;6903;Silver;Low Spender
+112;Female;36;Houston;7;FALSE;20;3.2;Neutral;4705;Bronze;Low Spender
+113;Female;30;New York;16;TRUE;21;4.3;Satisfied;12008;Gold;High Spender
+114;Male;33;Los Angeles;13;FALSE;15;4.4;Satisfied;82075;Silver;High Spender
+115;Female;42;Chicago;9;TRUE;38;3.5;Unsatisfied;5304;Bronze;Low Spender
+116;Male;29;San Francisco;18;FALSE;11;4.9;Satisfied;13602;Gold;High Spender
+117;Male;26;Miami;12;TRUE;48;3.7;Unsatisfied;7006;Silver;Medium Spender
+118;Female;38;Houston;8;FALSE;25;3.0;Neutral;4509;Bronze;Low Spender
+119;Female;32;New York;14;TRUE;29;4.7;Satisfied;11703;Gold;High Spender
+120;Male;34;Los Angeles;11;FALSE;16;4.0;Neutral;7902;Silver;Medium Spender
+121;Female;43;Chicago;10;TRUE;41;3.3;Unsatisfied;50575;Bronze;High Spender
+122;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14705;Gold;High Spender
+123;Male;27;Miami;13;TRUE;54;4.1;Unsatisfied;7104;Silver;Medium Spender
+124;Female;37;Houston;7;FALSE;23;3.4;Neutral;4308;Bronze;Low Spender
+125;Female;31;New York;15;TRUE;27;4.6;Satisfied;11406;Gold;High Spender
+126;Male;35;Los Angeles;12;FALSE;13;4.3;Neutral;8109;Silver;Medium Spender
+127;Female;41;Chicago;9;TRUE;39;3.6;Unsatisfied;48525;Bronze;High Spender
+128;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;15001;Gold;High Spender
+129;Male;32;Miami;10;TRUE;33;3.8;Unsatisfied;6703;Silver;Low Spender
+130;Female;36;Houston;8;FALSE;19;3.1;Neutral;4605;Bronze;Low Spender
+131;Female;30;New York;16;TRUE;20;4.5;Satisfied;11908;Gold;High Spender
+132;Male;33;Los Angeles;13;FALSE;14;4.2;Satisfied;83075;Silver;High Spender
+133;Female;42;Chicago;9;TRUE;37;3.5;Unsatisfied;5204;Bronze;Low Spender
+134;Male;29;San Francisco;18;FALSE;10;4.7;Satisfied;13702;Gold;High Spender
+135;Male;26;Miami;12;TRUE;47;3.9;Unsatisfied;6906;Silver;Low Spender
+136;Female;38;Houston;8;FALSE;24;3.2;Neutral;4409;Bronze;Low Spender
+137;Female;32;New York;14;TRUE;22;4.4;Satisfied;11603;Gold;High Spender
+138;Male;34;Los Angeles;11;FALSE;17;4.1;Neutral;8002;Silver;Medium Spender
+139;Female;43;Chicago;10;TRUE;40;3.3;Unsatisfied;50075;Bronze;High Spender
+140;Male;30;San Francisco;20;FALSE;12;4.8;Satisfied;14605;Gold;High Spender
+141;Male;27;Miami;13;TRUE;53;4.0;Unsatisfied;7004;Silver;Medium Spender
+142;Female;37;Houston;7;FALSE;21;3.1;Neutral;4208;Bronze;Low Spender
+143;Female;31;New York;15;TRUE;26;4.5;Satisfied;11306;Gold;High Spender
+144;Male;35;Los Angeles;12;FALSE;12;4.3;Neutral;8209;Silver;Medium Spender
+145;Female;41;Chicago;9;TRUE;38;3.6;Unsatisfied;48025;Bronze;High Spender
+146;Male;28;San Francisco;21;FALSE;9;4.9;Satisfied;14901;Gold;High Spender
+147;Male;32;Miami;10;TRUE;32;3.8;Unsatisfied;6803;Silver;Low Spender
+148;Female;36;Houston;8;FALSE;18;3.0;Neutral;4705;Bronze;Low Spender
+149;Female;30;New York;16;TRUE;19;4.7;Satisfied;11808;Gold;High Spender
+150;Male;34;Los Angeles;11;FALSE;15;4.0;Neutral;7902;Silver;Medium Spender
+151;Female;43;Chicago;10;TRUE;39;3.3;Unsatisfied;50575;Bronze;High Spender
+152;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14705;Gold;High Spender
+153;Male;27;Miami;13;TRUE;54;4.1;Unsatisfied;7104;Silver;Medium Spender
+154;Female;37;Houston;7;FALSE;23;3.4;Neutral;4308;Bronze;Low Spender
+155;Female;31;New York;15;TRUE;27;4.6;Satisfied;11406;Gold;High Spender
+156;Male;35;Los Angeles;12;FALSE;13;4.3;Neutral;8109;Silver;Medium Spender
+157;Female;41;Chicago;9;TRUE;39;3.6;Unsatisfied;48525;Bronze;High Spender
+158;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;15001;Gold;High Spender
+159;Male;32;Miami;10;TRUE;33;3.8;Unsatisfied;6703;Silver;Low Spender
+160;Female;36;Houston;8;FALSE;19;3.1;Neutral;4605;Bronze;Low Spender
+161;Female;30;New York;16;TRUE;20;4.5;Satisfied;11908;Gold;High Spender
+162;Male;33;Los Angeles;13;FALSE;14;4.2;Satisfied;83075;Silver;High Spender
+163;Female;42;Chicago;9;TRUE;37;3.5;Unsatisfied;5204;Bronze;Low Spender
+164;Male;29;San Francisco;18;FALSE;10;4.7;Satisfied;13702;Gold;High Spender
+165;Male;26;Miami;12;TRUE;47;3.9;Unsatisfied;6906;Silver;Low Spender
+166;Female;38;Houston;8;FALSE;24;3.2;Neutral;4409;Bronze;Low Spender
+167;Female;32;New York;14;TRUE;22;4.4;Satisfied;11603;Gold;High Spender
+168;Male;34;Los Angeles;11;FALSE;17;4.1;Neutral;8002;Silver;Medium Spender
+169;Female;43;Chicago;10;TRUE;40;3.3;Unsatisfied;50075;Bronze;High Spender
+170;Male;30;San Francisco;20;FALSE;12;4.8;Satisfied;14605;Gold;High Spender
+171;Male;27;Miami;13;TRUE;53;4.0;Unsatisfied;7004;Silver;Medium Spender
+172;Female;37;Houston;7;FALSE;21;3.1;Unknown;4208;Bronze;Low Spender
+173;Female;31;New York;15;TRUE;26;4.5;Satisfied;11306;Gold;High Spender
+174;Male;35;Los Angeles;12;FALSE;12;4.3;Neutral;8209;Silver;Medium Spender
+175;Female;41;Chicago;9;TRUE;38;3.6;Unsatisfied;48025;Bronze;High Spender
+176;Male;28;San Francisco;21;FALSE;9;4.9;Satisfied;14901;Gold;High Spender
+177;Male;32;Miami;10;TRUE;32;3.8;Unsatisfied;6803;Silver;Low Spender
+178;Female;36;Houston;8;FALSE;18;3.0;Neutral;4705;Bronze;Low Spender
+179;Female;30;New York;16;TRUE;19;4.7;Satisfied;11808;Gold;High Spender
+180;Male;34;Los Angeles;11;FALSE;15;4.0;Neutral;7902;Silver;Medium Spender
+181;Female;43;Chicago;10;TRUE;39;3.3;Unsatisfied;50575;Bronze;High Spender
+182;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14705;Gold;High Spender
+183;Male;27;Miami;13;TRUE;54;4.1;Unsatisfied;7104;Silver;Medium Spender
+184;Female;37;Houston;7;FALSE;23;3.4;Neutral;4308;Bronze;Low Spender
+185;Female;31;New York;15;TRUE;27;4.6;Satisfied;11406;Gold;High Spender
+186;Male;35;Los Angeles;12;FALSE;13;4.3;Neutral;8109;Silver;Medium Spender
+187;Female;41;Chicago;9;TRUE;39;3.6;Unsatisfied;48525;Bronze;High Spender
+188;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;15001;Gold;High Spender
+189;Male;32;Miami;10;TRUE;33;3.8;Unsatisfied;6703;Silver;Low Spender
+190;Female;36;Houston;8;FALSE;19;3.1;Neutral;4605;Bronze;Low Spender
+191;Female;30;New York;16;TRUE;20;4.5;Satisfied;11908;Gold;High Spender
+192;Male;33;Los Angeles;13;FALSE;14;4.2;Satisfied;83075;Silver;High Spender
+193;Female;42;Chicago;9;TRUE;37;3.5;Unsatisfied;5204;Bronze;Low Spender
+194;Male;29;San Francisco;18;FALSE;10;4.7;Satisfied;13702;Gold;High Spender
+195;Male;26;Miami;12;TRUE;47;3.9;Unsatisfied;6906;Silver;Low Spender
+196;Female;38;Houston;8;FALSE;24;3.2;Neutral;4409;Bronze;Low Spender
+197;Female;32;New York;14;TRUE;22;4.4;Satisfied;11603;Gold;High Spender
+198;Male;34;Los Angeles;11;FALSE;17;4.1;Neutral;8002;Silver;Medium Spender
+199;Female;43;Chicago;10;TRUE;40;3.3;Unsatisfied;50075;Bronze;High Spender
+200;Male;30;San Francisco;20;FALSE;12;4.8;Satisfied;14605;Gold;High Spender
+201;Male;27;Miami;13;TRUE;53;4.0;Unsatisfied;7004;Silver;Medium Spender
+202;Female;37;Houston;7;FALSE;21;3.1;Neutral;4208;Bronze;Low Spender
+203;Female;31;New York;15;TRUE;26;4.5;Satisfied;11306;Gold;High Spender
+204;Male;35;Los Angeles;12;FALSE;12;4.3;Neutral;8209;Silver;Medium Spender
+205;Female;41;Chicago;9;TRUE;38;3.6;Unsatisfied;48025;Bronze;High Spender
+206;Male;28;San Francisco;21;FALSE;9;4.9;Satisfied;14901;Gold;High Spender
+207;Male;32;Miami;10;TRUE;32;3.8;Unsatisfied;6803;Silver;Low Spender
+208;Female;36;Houston;8;FALSE;18;3.0;Neutral;4705;Bronze;Low Spender
+209;Female;30;New York;16;TRUE;19;4.7;Satisfied;11808;Gold;High Spender
+210;Male;34;Los Angeles;11;FALSE;15;4.0;Neutral;7902;Silver;Medium Spender
+211;Female;43;Chicago;10;TRUE;39;3.3;Unsatisfied;50575;Bronze;High Spender
+212;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14705;Gold;High Spender
+213;Male;27;Miami;13;TRUE;54;4.1;Unsatisfied;7104;Silver;Medium Spender
+214;Female;37;Houston;7;FALSE;23;3.4;Neutral;4308;Bronze;Low Spender
+215;Female;31;New York;15;TRUE;27;4.6;Satisfied;11406;Gold;High Spender
+216;Male;35;Los Angeles;12;FALSE;13;4.3;Neutral;8109;Silver;Medium Spender
+217;Female;41;Chicago;9;TRUE;39;3.6;Unsatisfied;48525;Bronze;High Spender
+218;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;15001;Gold;High Spender
+219;Male;32;Miami;10;TRUE;33;3.8;Unsatisfied;6703;Silver;Low Spender
+220;Female;36;Houston;8;FALSE;19;3.1;Neutral;4605;Bronze;Low Spender
+221;Female;30;New York;16;TRUE;20;4.5;Satisfied;11908;Gold;High Spender
+222;Male;33;Los Angeles;13;FALSE;14;4.2;Satisfied;83075;Silver;High Spender
+223;Female;42;Chicago;9;TRUE;37;3.5;Unsatisfied;5204;Bronze;Low Spender
+224;Male;29;San Francisco;18;FALSE;10;4.7;Satisfied;13702;Gold;High Spender
+225;Male;26;Miami;12;TRUE;47;3.9;Unsatisfied;6906;Silver;Low Spender
+226;Female;38;Houston;8;FALSE;24;3.2;Neutral;4409;Bronze;Low Spender
+227;Female;32;New York;14;TRUE;22;4.4;Satisfied;11603;Gold;High Spender
+228;Male;34;Los Angeles;11;FALSE;17;4.1;Neutral;8002;Silver;Medium Spender
+229;Female;43;Chicago;10;TRUE;40;3.3;Unsatisfied;50075;Bronze;High Spender
+230;Male;30;San Francisco;20;FALSE;12;4.8;Satisfied;14605;Gold;High Spender
+231;Male;27;Miami;13;TRUE;53;4.0;Unsatisfied;7004;Silver;Medium Spender
+232;Female;37;Houston;7;FALSE;21;3.1;Neutral;4208;Bronze;Low Spender
+233;Female;31;New York;15;TRUE;26;4.5;Satisfied;11306;Gold;High Spender
+234;Male;35;Los Angeles;12;FALSE;12;4.3;Neutral;8209;Silver;Medium Spender
+235;Female;41;Chicago;9;TRUE;38;3.6;Unsatisfied;48025;Bronze;High Spender
+236;Male;28;San Francisco;21;FALSE;9;4.9;Satisfied;14901;Gold;High Spender
+237;Male;32;Miami;10;TRUE;32;3.8;Unsatisfied;6803;Silver;Low Spender
+238;Female;36;Houston;8;FALSE;18;3.0;Neutral;4705;Bronze;Low Spender
+239;Female;30;New York;16;TRUE;19;4.7;Satisfied;11808;Gold;High Spender
+240;Male;34;Los Angeles;11;FALSE;15;4.0;Neutral;7902;Silver;Medium Spender
+241;Female;43;Chicago;10;TRUE;39;3.3;Unsatisfied;50575;Bronze;High Spender
+242;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14705;Gold;High Spender
+243;Male;27;Miami;13;TRUE;54;4.1;Unsatisfied;7104;Silver;Medium Spender
+244;Female;37;Houston;7;FALSE;23;3.4;Unknown;4308;Bronze;Low Spender
+245;Female;31;New York;15;TRUE;26;4.5;Satisfied;11306;Gold;High Spender
+246;Male;35;Los Angeles;12;FALSE;12;4.3;Neutral;8209;Silver;Medium Spender
+247;Female;41;Chicago;9;TRUE;38;3.6;Unsatisfied;48025;Bronze;High Spender
+248;Male;28;San Francisco;21;FALSE;9;4.9;Satisfied;14901;Gold;High Spender
+249;Male;32;Miami;10;TRUE;32;3.8;Unsatisfied;6803;Silver;Low Spender
+250;Female;36;Houston;8;FALSE;18;3.0;Neutral;4705;Bronze;Low Spender
+251;Female;30;New York;16;TRUE;19;4.7;Satisfied;11808;Gold;High Spender
+252;Male;34;Los Angeles;11;FALSE;15;4.0;Neutral;7902;Silver;Medium Spender
+253;Female;43;Chicago;10;TRUE;39;3.3;Unsatisfied;50575;Bronze;High Spender
+254;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14705;Gold;High Spender
+255;Male;27;Miami;13;TRUE;54;4.1;Unsatisfied;7104;Silver;Medium Spender
+256;Female;37;Houston;7;FALSE;23;3.4;Neutral;4308;Bronze;Low Spender
+257;Female;31;New York;15;TRUE;27;4.6;Satisfied;11406;Gold;High Spender
+258;Male;35;Los Angeles;12;FALSE;13;4.3;Neutral;8109;Silver;Medium Spender
+259;Female;41;Chicago;9;TRUE;39;3.6;Unsatisfied;48525;Bronze;High Spender
+260;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;15001;Gold;High Spender
+261;Male;32;Miami;10;TRUE;33;3.8;Unsatisfied;6703;Silver;Low Spender
+262;Female;36;Houston;8;FALSE;19;3.1;Neutral;4605;Bronze;Low Spender
+263;Female;30;New York;16;TRUE;20;4.5;Satisfied;11908;Gold;High Spender
+264;Male;33;Los Angeles;13;FALSE;14;4.2;Satisfied;83075;Silver;High Spender
+265;Female;42;Chicago;9;TRUE;37;3.5;Unsatisfied;5204;Bronze;Low Spender
+266;Male;29;San Francisco;18;FALSE;10;4.7;Satisfied;13702;Gold;High Spender
+267;Male;26;Miami;12;TRUE;47;3.9;Unsatisfied;6906;Silver;Low Spender
+268;Female;38;Houston;8;FALSE;24;3.2;Neutral;4409;Bronze;Low Spender
+269;Female;32;New York;14;TRUE;22;4.4;Satisfied;11603;Gold;High Spender
+270;Male;34;Los Angeles;11;FALSE;17;4.1;Neutral;8002;Silver;Medium Spender
+271;Female;43;Chicago;10;TRUE;40;3.3;Unsatisfied;50075;Bronze;High Spender
+272;Male;30;San Francisco;20;FALSE;12;4.8;Satisfied;14605;Gold;High Spender
+273;Male;27;Miami;13;TRUE;53;4.0;Unsatisfied;7004;Silver;Medium Spender
+274;Female;37;Houston;7;FALSE;23;3.4;Neutral;4308;Bronze;Low Spender
+275;Female;31;New York;15;TRUE;27;4.5;Satisfied;11406;Gold;High Spender
+276;Male;35;Los Angeles;12;FALSE;12;4.3;Neutral;8209;Silver;Medium Spender
+277;Female;41;Chicago;9;TRUE;38;3.6;Unsatisfied;48025;Bronze;High Spender
+278;Male;28;San Francisco;21;FALSE;9;4.9;Satisfied;14901;Gold;High Spender
+279;Male;32;Miami;10;TRUE;32;3.8;Unsatisfied;6803;Silver;Low Spender
+280;Female;36;Houston;8;FALSE;18;3.0;Neutral;4705;Bronze;Low Spender
+281;Female;30;New York;16;TRUE;19;4.7;Satisfied;11808;Gold;High Spender
+282;Male;34;Los Angeles;11;FALSE;15;4.0;Neutral;7902;Silver;Medium Spender
+283;Female;43;Chicago;10;TRUE;39;3.3;Unsatisfied;50575;Bronze;High Spender
+284;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14705;Gold;High Spender
+285;Male;27;Miami;13;TRUE;54;4.1;Unsatisfied;7104;Silver;Medium Spender
+286;Female;37;Houston;7;FALSE;23;3.4;Neutral;4308;Bronze;Low Spender
+287;Female;31;New York;15;TRUE;26;4.5;Satisfied;11306;Gold;High Spender
+288;Male;35;Los Angeles;12;FALSE;13;4.3;Neutral;8209;Silver;Medium Spender
+289;Female;41;Chicago;9;TRUE;39;3.6;Unsatisfied;48525;Bronze;High Spender
+290;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;15001;Gold;High Spender
+291;Male;32;Miami;10;TRUE;33;3.8;Unsatisfied;6703;Silver;Low Spender
+292;Female;36;Houston;8;FALSE;19;3.1;Neutral;4605;Bronze;Low Spender
+293;Female;30;New York;16;TRUE;20;4.5;Satisfied;11908;Gold;High Spender
+294;Male;33;Los Angeles;13;FALSE;14;4.2;Satisfied;83075;Silver;High Spender
+295;Female;42;Chicago;9;TRUE;37;3.5;Unsatisfied;5204;Bronze;Low Spender
+296;Male;29;San Francisco;18;FALSE;10;4.7;Satisfied;13702;Gold;High Spender
+297;Male;26;Miami;12;TRUE;47;3.9;Unsatisfied;6906;Silver;Low Spender
+298;Female;38;Houston;8;FALSE;24;3.2;Neutral;4409;Bronze;Low Spender
+299;Female;32;New York;14;TRUE;22;4.4;Satisfied;11603;Gold;High Spender
+300;Male;34;Los Angeles;11;FALSE;17;4.1;Neutral;8002;Silver;Medium Spender
+301;Male;36;San Francisco;19;FALSE;11;4.6;Satisfied;14208;Gold;High Spender
+302;Female;29;Miami;14;TRUE;50;4.0;Unsatisfied;7304;Silver;Medium Spender
+303;Female;35;Houston;7;FALSE;21;3.3;Neutral;4506;Bronze;Low Spender
+304;Male;31;New York;17;TRUE;18;4.8;Satisfied;12106;Gold;High Spender
+305;Male;27;Los Angeles;11;FALSE;16;4.2;Neutral;7809;Silver;Medium Spender
+306;Female;42;Chicago;10;TRUE;35;3.5;Unsatisfied;49525;Bronze;High Spender
+307;Male;29;San Francisco;18;FALSE;9;4.7;Satisfied;13902;Gold;High Spender
+308;Male;26;Miami;12;TRUE;46;3.9;Unsatisfied;6706;Silver;Low Spender
+309;Female;38;Houston;8;FALSE;25;3.2;Neutral;4609;Bronze;Low Spender
+310;Female;32;New York;14;TRUE;21;4.5;Satisfied;11703;Gold;High Spender
+311;Male;34;Los Angeles;11;FALSE;14;4.0;Neutral;8102;Silver;Medium Spender
+312;Female;43;Chicago;9;TRUE;38;3.3;Unsatisfied;51575;Bronze;High Spender
+313;Male;30;San Francisco;20;FALSE;12;4.8;Satisfied;14505;Gold;High Spender
+314;Male;27;Miami;13;TRUE;52;4.1;Unsatisfied;6904;Silver;Low Spender
+315;Female;37;Houston;7;FALSE;24;3.4;Neutral;4208;Bronze;Low Spender
+316;Female;31;New York;15;TRUE;26;4.5;Satisfied;11306;Gold;High Spender
+317;Male;35;Los Angeles;12;FALSE;13;4.3;Neutral;8209;Silver;Medium Spender
+318;Female;41;Chicago;9;TRUE;39;3.6;Unsatisfied;48025;Bronze;High Spender
+319;Male;28;San Francisco;21;FALSE;9;4.9;Satisfied;14901;Gold;High Spender
+320;Male;32;Miami;10;TRUE;32;3.8;Unsatisfied;6803;Silver;Low Spender
+321;Female;36;Houston;8;FALSE;18;3.0;Neutral;4705;Bronze;Low Spender
+322;Female;30;New York;16;TRUE;19;4.7;Satisfied;11808;Gold;High Spender
+323;Male;34;Los Angeles;11;FALSE;15;4.0;Neutral;7902;Silver;Medium Spender
+324;Female;43;Chicago;10;TRUE;39;3.3;Unsatisfied;50575;Bronze;High Spender
+325;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14705;Gold;High Spender
+326;Male;27;Miami;13;TRUE;54;4.1;Unsatisfied;7104;Silver;Medium Spender
+327;Female;37;Houston;7;FALSE;23;3.4;Neutral;4308;Bronze;Low Spender
+328;Female;31;New York;15;TRUE;27;4.5;Satisfied;11406;Gold;High Spender
+329;Male;35;Los Angeles;12;FALSE;13;4.3;Neutral;8209;Silver;Medium Spender
+330;Female;41;Chicago;9;TRUE;39;3.6;Unsatisfied;48525;Bronze;High Spender
+331;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;15001;Gold;High Spender
+332;Male;32;Miami;10;TRUE;33;3.8;Unsatisfied;6703;Silver;Low Spender
+333;Female;36;Houston;8;FALSE;19;3.1;Neutral;4605;Bronze;Low Spender
+334;Female;30;New York;16;TRUE;20;4.5;Satisfied;11908;Gold;High Spender
+335;Male;33;Los Angeles;13;FALSE;14;4.2;Satisfied;83075;Silver;High Spender
+336;Female;42;Chicago;9;TRUE;37;3.5;Unsatisfied;5204;Bronze;Low Spender
+337;Male;29;San Francisco;18;FALSE;10;4.7;Satisfied;13702;Gold;High Spender
+338;Male;26;Miami;12;TRUE;47;3.9;Unsatisfied;6906;Silver;Low Spender
+339;Female;38;Houston;8;FALSE;24;3.2;Neutral;4409;Bronze;Low Spender
+340;Female;32;New York;14;TRUE;22;4.4;Satisfied;11603;Gold;High Spender
+341;Male;34;Los Angeles;11;FALSE;17;4.1;Neutral;8002;Silver;Medium Spender
+342;Female;43;Chicago;9;TRUE;40;3.3;Unsatisfied;52575;Bronze;High Spender
+343;Male;30;San Francisco;20;FALSE;11;4.8;Satisfied;14605;Gold;High Spender
+344;Male;27;Miami;13;TRUE;55;4.0;Unsatisfied;7204;Silver;Medium Spender
+345;Female;37;Houston;7;FALSE;25;3.2;Neutral;4408;Bronze;Low Spender
+346;Female;31;New York;15;TRUE;28;4.5;Satisfied;11506;Gold;High Spender
+347;Male;35;Los Angeles;12;FALSE;14;4.3;Neutral;8309;Silver;Medium Spender
+348;Female;41;Chicago;9;TRUE;40;3.6;Unsatisfied;49025;Bronze;High Spender
+349;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;14801;Gold;High Spender
+350;Male;32;Miami;10;TRUE;34;3.8;Unsatisfied;6903;Silver;Low Spender
+351;Female;36;Houston;8;FALSE;20;3.1;Neutral;4805;Bronze;Low Spender
+352;Female;30;New York;16;TRUE;21;4.7;Satisfied;11708;Gold;High Spender
+353;Male;34;Los Angeles;11;FALSE;15;4.0;Neutral;7902;Silver;Medium Spender
+354;Female;43;Chicago;10;TRUE;41;3.3;Unsatisfied;51075;Bronze;High Spender
+355;Male;30;San Francisco;19;FALSE;12;4.6;Satisfied;14405;Gold;High Spender
+356;Male;27;Miami;13;TRUE;56;4.1;Unsatisfied;7004;Silver;Medium Spender
+357;Female;37;Houston;7;FALSE;26;3.4;Neutral;4108;Bronze;Low Spender
+358;Female;31;New York;15;TRUE;29;4.5;Satisfied;11606;Gold;High Spender
+359;Male;35;Los Angeles;12;FALSE;14;4.3;Neutral;8109;Silver;Medium Spender
+360;Female;41;Chicago;9;TRUE;41;3.6;Unsatisfied;49525;Bronze;High Spender
+361;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;14901;Gold;High Spender
+362;Male;32;Miami;10;TRUE;35;3.8;Unsatisfied;6603;Silver;Low Spender
+363;Female;36;Houston;8;FALSE;21;3.1;Neutral;4305;Bronze;Low Spender
+364;Female;30;New York;16;TRUE;22;4.7;Satisfied;12008;Gold;High Spender
+365;Male;34;Los Angeles;11;FALSE;16;4.1;Neutral;7802;Silver;Medium Spender
+366;Female;43;Chicago;10;TRUE;42;3.3;Unsatisfied;50575;Bronze;High Spender
+367;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14605;Gold;High Spender
+368;Male;27;Miami;13;TRUE;57;4.1;Unsatisfied;7104;Silver;Medium Spender
+369;Female;37;Houston;7;FALSE;24;3.4;Neutral;4508;Bronze;Low Spender
+370;Female;31;New York;15;TRUE;30;4.5;Satisfied;11406;Gold;High Spender
+371;Male;35;Los Angeles;12;FALSE;17;4.1;Neutral;8009;Silver;Medium Spender
+372;Female;41;Chicago;9;TRUE;42;3.6;Unsatisfied;47525;Bronze;High Spender
+373;Male;28;San Francisco;21;FALSE;11;4.9;Satisfied;14801;Gold;High Spender
+374;Male;32;Miami;10;TRUE;36;3.8;Unsatisfied;6603;Silver;Low Spender
+375;Female;36;Houston;8;FALSE;22;3.0;Neutral;4705;Bronze;Low Spender
+376;Female;30;New York;16;TRUE;23;4.5;Satisfied;11908;Gold;High Spender
+377;Male;33;Los Angeles;11;FALSE;18;4.2;Neutral;7702;Silver;Medium Spender
+378;Female;43;Chicago;10;TRUE;43;3.3;Unsatisfied;51575;Bronze;High Spender
+379;Male;30;San Francisco;19;FALSE;12;4.6;Satisfied;14505;Gold;High Spender
+380;Male;27;Miami;13;TRUE;58;4.1;Unsatisfied;7104;Silver;Medium Spender
+381;Female;37;Houston;7;FALSE;27;3.4;Neutral;4308;Bronze;Low Spender
+382;Female;31;New York;15;TRUE;31;4.5;Satisfied;11606;Gold;High Spender
+383;Male;35;Los Angeles;12;FALSE;15;4.3;Neutral;8209;Silver;Medium Spender
+384;Female;41;Chicago;9;TRUE;43;3.6;Unsatisfied;49525;Bronze;High Spender
+385;Male;28;San Francisco;21;FALSE;10;4.9;Satisfied;14901;Gold;High Spender
+386;Male;32;Miami;10;TRUE;37;3.8;Unsatisfied;6603;Silver;Low Spender
+387;Female;36;Houston;8;FALSE;23;3.1;Neutral;4405;Bronze;Low Spender
+388;Female;30;New York;16;TRUE;24;4.7;Satisfied;12008;Gold;High Spender
+389;Male;34;Los Angeles;11;FALSE;16;4.1;Neutral;7802;Silver;Medium Spender
+390;Female;43;Chicago;10;TRUE;44;3.3;Unsatisfied;50575;Bronze;High Spender
+391;Male;30;San Francisco;20;FALSE;13;4.8;Satisfied;14605;Gold;High Spender
+392;Male;27;Miami;13;TRUE;59;4.1;Unsatisfied;7104;Silver;Medium Spender
+393;Female;37;Houston;7;FALSE;28;3.4;Neutral;4508;Bronze;Low Spender
+394;Female;31;New York;15;TRUE;32;4.5;Satisfied;11406;Gold;High Spender
+395;Male;35;Los Angeles;12;FALSE;17;4.1;Neutral;8009;Silver;Medium Spender
+396;Female;41;Chicago;9;TRUE;44;3.6;Unsatisfied;47525;Bronze;High Spender
+397;Male;28;San Francisco;21;FALSE;12;4.9;Satisfied;14801;Gold;High Spender
+398;Male;32;Miami;10;TRUE;38;3.8;Unsatisfied;6603;Silver;Low Spender
+399;Female;36;Houston;8;FALSE;22;3.0;Neutral;4705;Bronze;Low Spender
+400;Female;30;New York;16;TRUE;25;4.5;Satisfied;11908;Gold;High Spender
+401;Male;33;Los Angeles;11;FALSE;18;4.1;Neutral;8002;Silver;Medium Spender
+402;Female;43;Chicago;10;TRUE;45;3.3;Unsatisfied;51575;Bronze;High Spender
+403;Male;30;San Francisco;19;FALSE;13;4.6;Satisfied;14505;Gold;High Spender
+404;Male;27;Miami;13;TRUE;60;4.1;Unsatisfied;7104;Silver;Medium Spender
+405;Female;37;Houston;7;FALSE;29;3.4;Neutral;4308;Bronze;Low Spender
+406;Female;31;New York;15;TRUE;33;4.5;Satisfied;11606;Gold;High Spender
+407;Male;35;Los Angeles;12;FALSE;16;4.3;Neutral;8209;Silver;Medium Spender
+408;Female;41;Chicago;9;TRUE;45;3.6;Unsatisfied;49525;Bronze;High Spender
+409;Male;28;San Francisco;21;FALSE;11;4.9;Satisfied;14901;Gold;High Spender
+410;Male;32;Miami;10;TRUE;39;3.8;Unsatisfied;6603;Silver;Low Spender
+411;Female;36;Houston;8;FALSE;24;3.1;Neutral;4405;Bronze;Low Spender
+412;Female;30;New York;16;TRUE;25;4.7;Satisfied;12008;Gold;High Spender
+413;Male;34;Los Angeles;11;FALSE;17;4.1;Neutral;7802;Silver;Medium Spender
+414;Female;43;Chicago;10;TRUE;46;3.3;Unsatisfied;50575;Bronze;High Spender
+415;Male;30;San Francisco;20;FALSE;14;4.8;Satisfied;14605;Gold;High Spender
+416;Male;27;Miami;13;TRUE;61;4.1;Unsatisfied;7104;Silver;Medium Spender
+417;Female;37;Houston;7;FALSE;30;3.4;Neutral;4508;Bronze;Low Spender
+418;Female;31;New York;15;TRUE;34;4.5;Satisfied;11406;Gold;High Spender
+419;Male;35;Los Angeles;12;FALSE;19;4.1;Neutral;8009;Silver;Medium Spender
+420;Female;41;Chicago;9;TRUE;46;3.6;Unsatisfied;47525;Bronze;High Spender
+421;Male;28;San Francisco;21;FALSE;12;4.9;Satisfied;14801;Gold;High Spender
+422;Male;32;Miami;10;TRUE;40;3.8;Unsatisfied;6603;Silver;Low Spender
+423;Female;36;Houston;8;FALSE;26;3.0;Neutral;4705;Bronze;Low Spender
+424;Female;30;New York;16;TRUE;27;4.5;Satisfied;11908;Gold;High Spender
+425;Male;34;Los Angeles;11;FALSE;18;4.2;Neutral;7802;Silver;Medium Spender
+426;Female;43;Chicago;10;TRUE;47;3.3;Unsatisfied;51575;Bronze;High Spender
+427;Male;30;San Francisco;19;FALSE;14;4.6;Satisfied;14505;Gold;High Spender
+428;Male;27;Miami;13;TRUE;62;4.1;Unsatisfied;7104;Silver;Medium Spender
+429;Female;37;Houston;7;FALSE;31;3.4;Neutral;4308;Bronze;Low Spender
+430;Female;31;New York;15;TRUE;35;4.5;Satisfied;11606;Gold;High Spender
+431;Male;35;Los Angeles;12;FALSE;20;4.3;Neutral;8209;Silver;Medium Spender
+432;Female;41;Chicago;9;TRUE;47;3.6;Unsatisfied;49525;Bronze;High Spender
+433;Male;28;San Francisco;21;FALSE;11;4.9;Satisfied;14901;Gold;High Spender
+434;Male;32;Miami;10;TRUE;41;3.8;Unsatisfied;6603;Silver;Low Spender
+435;Female;36;Houston;8;FALSE;28;3.1;Neutral;4405;Bronze;Low Spender
+436;Female;30;New York;16;TRUE;28;4.7;Satisfied;12008;Gold;High Spender
+437;Male;34;Los Angeles;11;FALSE;19;4.1;Neutral;7802;Silver;Medium Spender
+438;Female;43;Chicago;10;TRUE;48;3.3;Unsatisfied;50575;Bronze;High Spender
+439;Male;30;San Francisco;20;FALSE;15;4.8;Satisfied;14605;Gold;High Spender
+440;Male;27;Miami;13;TRUE;63;4.1;Unsatisfied;7104;Silver;Medium Spender
+441;Female;37;Houston;7;FALSE;32;3.4;Neutral;4508;Bronze;Low Spender
+442;Female;31;New York;15;TRUE;36;4.5;Satisfied;11406;Gold;High Spender
+443;Male;35;Los Angeles;12;FALSE;20;4.1;Neutral;8009;Silver;Medium Spender
+444;Female;41;Chicago;9;TRUE;48;3.6;Unsatisfied;47525;Bronze;High Spender
+445;Male;28;San Francisco;21;FALSE;13;4.9;Satisfied;14801;Gold;High Spender
+446;Male;32;Miami;10;TRUE;42;3.8;Unsatisfied;6603;Silver;Low Spender
+447;Female;36;Houston;8;FALSE;27;3.0;Neutral;4705;Bronze;Low Spender
+448;Female;30;New York;16;TRUE;28;4.5;Satisfied;11908;Gold;High Spender
+449;Male;34;Los Angeles;11;FALSE;21;4.2;Neutral;7802;Silver;Medium Spender
+450;Female;43;Chicago;10;TRUE;49;3.3;Unsatisfied;51575;Bronze;High Spender

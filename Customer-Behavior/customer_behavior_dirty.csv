@@ -1,0 +1,56 @@
+Customer ID,Gender,Age,City,Membership Type,Total Spend,Items Purchased,Average Rating,Discount Applied,Days Since Last Purchase,Satisfaction Level
+101,Female,29,New York,Gold,11202,14,46,True,25,Satisfied
+102,Male,34,Los Angeles,Silver,7805,11,41,False,18,Neutral
+103,Female,43,Chicago,Bronze,51075,9,34,True,42,Unsatisfied
+104,Male,30,San Francisco,Gold,14803,19,47,False,12,Satisfied
+105,Male,27,Miami,Silver,7204,13,40,True,55,Unsatisfied
+106,Female,37,Houston,Bronze,4408,8,31,False,22,Neutral
+107,Female,31,New York,Gold,11506,15,45,True,28,Satisfied
+108,Male,35,Los Angeles,Silver,8009,12,42,False,14,Neutral
+109,Female,41,Chicago,Bronze,49525,10,36,True,40,Unsatisfied
+110,Male,28,San Francisco,Gold,15201,21,48,False,9,Satisfied
+111,Male,32,Miami,Silver,6903,11,38,True,34,Unsatisfied
+112,Female,36,Houston,Bronze,4705,7,32,False,20,Neutral
+113,Female,30,New York,Gold,12008,16,43,True,21,Satisfied
+114,Male,33,Los Angeles,Silver,82075,13,44,False,15,Satisfied
+115,Female,42,Chicago,Bronze,5304,9,35,True,38,Unsatisfied
+116,Male,29,San Francisco,Gold,13602,18,49,False,11,Satisfied
+117,Male,26,Miami,Silver,7006,12,37,True,48,Unsatisfied
+118,Female,38,Houston,Bronze,4509,8,30,False,25,Neutral
+119,Female,32,New York,Gold,11703,14,47,True,29,Satisfied
+120,Male,34,Los Angeles,Silver,7902,11,40,False,16,Neutral
+121,Female,43,Chicago,Bronze,50575,10,33,True,41,Unsatisfied
+122,Male,30,San Francisco,Gold,14705,20,48,False,13,Satisfied
+123,Male,27,Miami,Silver,7104,13,41,True,54,Unsatisfied
+124,Female,37,Houston,Bronze,4308,7,34,False,23,Neutral
+125,Female,31,New York,Gold,11406,15,46,True,27,Satisfied
+126,Male,35,Los Angeles,Silver,8109,12,43,False,13,Neutral
+127,Female,41,Chicago,Bronze,48525,9,36,True,39,Unsatisfied
+128,Male,28,San Francisco,Gold,15001,21,49,False,10,Satisfied
+129,Male,32,Miami,Silver,6703,10,38,True,33,Unsatisfied
+130,Female,36,Houston,Bronze,4605,8,31,False,19,Neutral
+131,Female,30,New York,Gold,11908,16,45,True,20,Satisfied
+132,Male,33,Los Angeles,Silver,83075,13,42,False,14,Satisfied
+134,Male,29,San Francisco,Gold,13702,18,47,False,10,Satisfied
+135,Male,26,Miami,Silver,6906,12,39,True,47,Unsatisfied
+136,Female,38,Houston,Bronze,4409,8,32,False,24,Neutral
+137,Female,32,New York,Gold,11603,14,44,True,22,Satisfied
+142,Female,37,Houston,Bronze,4208,7,31,False,21,Neutral
+148,Female,36,Houston,Bronze,4705,8,30,False,18,Neutral
+149,Female,30,New York,Gold,11808,16,47,True,19,Satisfied
+172,Female,37,Houston,Bronze,4208,7,31,False,21,Unknown
+244,Female,37,Houston,Bronze,4308,7,34,False,23,Unknown
+301,Male,36,San Francisco,Gold,14208,19,46,False,11,Satisfied
+302,Female,29,Miami,Silver,7304,14,40,True,50,Unsatisfied
+303,Female,35,Houston,Bronze,4506,7,33,False,21,Neutral
+304,Male,31,New York,Gold,12106,17,48,True,18,Satisfied
+305,Male,27,Los Angeles,Silver,7809,11,42,False,16,Neutral
+306,Female,42,Chicago,Bronze,49525,10,35,True,35,Unsatisfied
+310,Female,32,New York,Gold,11703,14,45,True,21,Satisfied
+312,Female,43,Chicago,Bronze,51575,9,33,True,38,Unsatisfied
+345,Female,37,Houston,Bronze,4408,7,32,False,25,Neutral
+355,Male,30,San Francisco,Gold,14405,19,46,False,12,Satisfied
+371,Male,35,Los Angeles,Silver,8009,12,41,False,17,Neutral
+377,Male,33,Los Angeles,Silver,7702,11,42,False,18,Neutral
+401,Male,33,Los Angeles,Silver,8002,11,41,False,18,Neutral
+425,Male,34,Los Angeles,Silver,7802,11,42,False,18,Neutral
