@@ -1,131 +1,180 @@
+```markdown
+# Customer Behavior Analytics & Segmentation
 
-# Customer Behavior Analysis & Segmentation
-
-An exploratory and predictive data analytics project analyzing customer demographic patterns, purchase behavior, and lifetime engagement metrics to derive actionable business insights and customer segmentation strategies.
-
----
-
-## Business Problem & Objectives
-
-Understanding customer purchasing habits and segment characteristics is critical for optimizing marketing spend, improving retention, and increasing Customer Lifetime Value (CLV). 
-
-This project aims to:
-- Identify underlying demographic and behavioral patterns driving purchasing decisions.
-- Perform exploratory data analysis (EDA) to evaluate revenue concentration and purchase frequency.
-- Segment customer cohorts based on behavioral metrics (e.g., RFM modeling / clustering).
-- Provide data-driven recommendations for targeted marketing and retention campaigns.
+An end-to-end data analytics project evaluating customer transaction histories, spending behavior, retention risk, and demographic drivers using an integrated workflow of Excel, Python, PostgreSQL, and Business Intelligence dashboards.
 
 ---
 
-## Tech Stack & Tools
-
-- **Programming Language:** Python 3.10+
-- **Data Manipulation & Analysis:** Pandas, NumPy
-- **Data Visualization:** Matplotlib, Seaborn, Plotly
-- **Statistical Modeling & Clustering:** Scikit-Learn (K-Means, PCA, StandardScaler)
-- **Environment:** Jupyter Notebook / VS Code
-
----
-
-## Project Workflow
+## Workflow Architecture
 
 ```mermaid
 flowchart LR
-    A[Raw Customer Dataset] --> B[Data Cleaning & Preprocessing]
-    B --> C[Exploratory Data Analysis]
-    C --> D[Feature Engineering & Scaling]
-    D --> E[Behavioral Segmentation / Modeling]
-    E --> F[Business Insights & Strategy]
+    A[Raw CSV Dataset\nDelimiter: ';'] --> B[Phase 1: Excel\nFeature Engineering: Spender Group]
+    B --> C[Phase 2: Python / Pandas\nCleaning, Scaling, Imputation, IQR]
+    C --> D[(Phase 3: PostgreSQL\nEDA, Window Functions, Segmentation)]
+    D --> E[Phase 4: BI Dashboard\nExecutive & Retention Reporting]
 
 ```
 
-### 1. Data Cleaning & Preprocessing
+---
 
-* Handled missing values and standardized categorical variables.
-* Detected and treated outliers in transaction amounts and frequency distributions.
-* Validated data types and transformed date fields into temporal features (e.g., tenure, recency).
+## Tech Stack
 
-### 2. Exploratory Data Analysis (EDA)
-
-* Analyzed distribution of spending habits across demographic cohorts (age, gender, location).
-* Assessed correlation between promotional campaign response and repeat purchase rates.
-* Evaluated purchase volume trends across seasonal and day-of-week intervals.
-
-### 3. Customer Segmentation & Feature Engineering
-
-* Constructed behavioral metrics: Recency (days since last purchase), Frequency (total orders), and Monetary Value (total spend).
-* Scaled numerical features using `StandardScaler` to normalize variance across dimensions.
-* Applied clustering algorithms to group customers into distinct behavioral segments (e.g., High-Value Loyalists, At-Risk Customers, Occasional Buyers).
+* **Data Ingestion & Feature Engineering:** Microsoft Excel
+* **Data Cleaning & Preprocessing:** Python (Pandas, NumPy)
+* **Analytical Querying & Modeling:** PostgreSQL (Window Functions, CTEs, Aggregations)
+* **Visualization & Reporting:** Power BI / Excel Dashboard
+* **Version Control:** Git, GitHub
 
 ---
 
-## Key Analytical Findings
+## Dataset Schema
 
-* **Revenue Concentration:** A small percentage of active customers accounts for the majority of overall revenue.
-* **Retention Drivers:** Customers engaged with multi-channel promotions exhibit higher repeat purchase rates compared to single-channel buyers.
-* **Churn Risk Indicators:** Extended intervals between first and second purchases serve as a strong early indicator of customer churn.
+The primary dataset consists of 350 customer records across 11 core attributes:
+
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| `Customer ID` | Integer | Unique identifier for each customer |
+| `Age` | Integer | Customer age |
+| `Gender` | String | Customer biological sex (Male, Female, Unknown) |
+| `City` | String | City of residence |
+| `Membership Type` | String | Loyalty tier (Bronze, Silver, Gold) |
+| `Total Spend` | Float | Total lifetime expenditure |
+| `Items Purchased` | Integer | Total units purchased |
+| `Average Rating` | Float | Average satisfaction score |
+| `Satisfaction Level` | String | Customer satisfaction status |
+| `Days Since Last Purchase` | Integer | Inactivity period in days |
+| `Discount Applied` | Boolean | Indicator if a promotional discount was used |
+
+---
+
+## Data Pipeline & Preprocessing
+
+### 1. Excel Pre-Processing
+
+* Created the core business variable `Spender Group` using conditional logic to categorize spending tiers (`High Spender`, `Medium Spender`, `Low Spender`).
+
+### 2. Python Data Cleaning Pipeline
+
+* **Duplicate Removal:** Standard deduplication across unique transaction IDs followed by business-level deduplication across composite attributes:
+```python
+subset_cols = ['Age', 'City', 'Items Purchased', 'Satisfaction Level', 'Membership Type', 'Average Rating']
+df = df.drop_duplicates(subset=subset_cols)
+
+```
+
+
+* **Scale Normalization:** Corrected scale inconsistencies in the `Average Rating` column (repairing 1–50 reporting anomalies to a standard 10–50 base):
+```python
+df['Average Rating'] = df['Average Rating'].apply(lambda x: x * 10 if x < 10 else x)
+
+```
+
+
+* **Missing Value Imputation:**
+* Categorical fields (`Gender`, `City`, `Membership Type`, `Satisfaction Level`): Imputed with `"Unknown"`.
+* Numerical metrics (`Average Rating`): Imputed using the median score.
+
+
+* **Outlier Assessment:** Applied Interquartile Range (IQR) analysis to `Total Spend`. Identified upper-boundary values were retained based on business validation for high-net-worth customers.
+
+---
+
+## SQL Analytics (PostgreSQL)
+
+Analytical queries simulate core business intelligence operations:
+
+* **Revenue Distribution:** Aggregating total revenue and transaction volume sliced by `City` and `Membership Type`.
+* **Behavioral Segmentation:** Implementing `CASE WHEN` logic to map customer value bands.
+* **Churn Risk Identification:** Querying inactivity thresholds (`Days Since Last Purchase > 30`) crossed with low satisfaction ratings (`Average Rating < 4`).
+* **Ranking & Partitioning:** Utilizing Window Functions (`RANK()`, `DENSE_RANK()`, `PARTITION BY City`) to identify and isolate top revenue-generating customers per geographic region.
+
+---
+
+## Key Metrics & Analytical Findings
+
+### Executive Summary
+
+| Metric | Value | Business Context |
+| --- | --- | --- |
+| **Total Revenue** | 5.79M | Cumulative gross revenue across all cohorts |
+| **Total Customer Base** | 350 | Unique active accounts analyzed |
+| **Average Rating** | 4.02 / 5.0 | Overall customer satisfaction index |
+| **Average Recency** | 27 Days | Mean days since previous transaction |
+| **Primary Revenue Market** | Chicago (43%) | Largest single geographic revenue contributor |
+
+### Revenue & Cohort Insights
+
+* **Pareto Concentration:** High Spenders comprise 50% of the customer count but generate ~81% of total revenue.
+* **Demographic Drivers:**
+* The **Age 41+** cohort delivers the highest revenue per customer despite a smaller volume footprint.
+* **Female customers** account for ~60% of total revenue.
+
+
+* **Tier Upsell Opportunity:** The **Bronze Membership** segment generates the highest overall gross revenue, highlighting a prime target pool for premium tier upgrades.
+* **Retention & Churn Indicators:**
+* **26.6%** of customers exhibit high churn risk (inactivity > 30 days and average rating < 4.0).
+* Extended inactivity intervals strongly correlate with decaying customer review scores.
+
+
+* **Discount Dependency:** 62% of transactions had a discount applied, indicating high promotional reliance.
+
+---
+
+## Strategic Business Recommendations
+
+1. **High Spender VIP Protection:** Prioritize dedicated account management and loyalty perks for the top 50% spending tier generating 81% of gross revenue.
+2. **Promotional Margin Optimization:** Review margin erosion caused by the 62% discount utilization rate; shift toward targeted rather than blanket discounting.
+3. **Bronze Tier Conversion Campaign:** Deploy automated marketing funnels to convert high-spending Bronze members into Silver/Gold subscription tiers.
+4. **Automated Churn Win-Back Workflows:** Trigger re-engagement incentives for customers crossing the 30-day inactivity threshold before ratings drop further.
 
 ---
 
 ## Repository Structure
 
 ```text
-Customer-Behavior/
+.
 ├── data/
-│   ├── raw/                         # Raw dataset files
-│   └── processed/                   # Cleaned and engineered datasets
+│   ├── raw/
+│   │   └── customer_data_raw.csv
+│   └── processed/
+│       └── customer_data_cleaned.csv
 ├── notebooks/
-│   ├── 01_data_cleaning_eda.ipynb   # Exploratory analysis and visual inspection
-│   └── 02_customer_segmentation.ipynb # Feature scaling and segmentation models
-├── src/
-│   ├── __init__.py
-│   ├── data_loader.py               # Dataset ingestion utilities
-│   └── utils.py                     # Plotting and metric evaluation helper functions
-├── requirements.txt                 # Python package dependencies
-└── README.md                        # Project documentation
+│   └── data_cleaning_and_validation.ipynb
+├── sql/
+│   ├── 01_exploratory_queries.sql
+│   ├── 02_segmentation_queries.sql
+│   └── 03_window_ranking_queries.sql
+├── dashboards/
+│   └── customer_analytics_dashboard.pbix
+└── README.md
 
 ```
 
 ---
 
-## Reproduction Guide
+## Execution Guide
 
-### 1. Clone Repository & Navigate to Directory
-
-```bash
-git clone [https://github.com/ChenStormtout/data-analytics-portfolio.git](https://github.com/ChenStormtout/data-analytics-portfolio.git)
-cd data-analytics-portfolio/Customer-Behavior
-
-```
-
-### 2. Setup Virtual Environment
+### 1. Python Environment Setup
 
 ```bash
 python -m venv .venv
-
 # Windows:
 .venv\Scripts\activate
-
 # Linux/macOS:
 source .venv/bin/activate
 
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
+pip install pandas numpy matplotlib seaborn
 
 ```
 
-### 4. Run Analysis
+### 2. Run Cleaning Pipeline
 
-Launch Jupyter Notebook to inspect the end-to-end analysis:
+Execute the notebook in `notebooks/data_cleaning_and_validation.ipynb` to process raw CSV records and export the cleaned dataset.
 
-```bash
-jupyter notebook notebooks/
+### 3. Load & Query SQL
 
-```
+Import `customer_data_cleaned.csv` into your PostgreSQL instance and execute the script suite in the `sql/` directory.
 
 ```
 
