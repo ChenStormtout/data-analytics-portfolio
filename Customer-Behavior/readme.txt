@@ -7,7 +7,8 @@ An end-to-end data analytics project evaluating customer transaction histories, 
 
 ## Workflow Architecture
 
-```mermaid
+```
+mermaid
 flowchart LR
     A[Raw CSV Dataset\nDelimiter: ';'] --> B[Phase 1: Excel\nFeature Engineering: Spender Group]
     B --> C[Phase 2: Python / Pandas\nCleaning, Scaling, Imputation, IQR]
