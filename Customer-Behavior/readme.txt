@@ -167,6 +167,6 @@ Import `data/processed/customer_data_cleaned.csv` into PostgreSQL and run querie
 4. **View Visualizations:**
 Open `/dashboards/customer_behavior_bi.pbix` in Power BI Desktop or inspect `/assets/dashboard_preview.png`.
 
-```
+
 
 
