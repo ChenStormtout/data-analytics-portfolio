@@ -1,5 +1,4 @@
 
-```markdown
 # Customer Behavior Analytics & Segmentation
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
