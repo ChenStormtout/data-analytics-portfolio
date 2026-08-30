@@ -1,133 +1,125 @@
+
 ```markdown
 # Customer Behavior Analytics & Segmentation
 
-An end-to-end data analytics project evaluating customer transaction histories, spending behavior, retention risk, and demographic drivers using an integrated workflow of Excel, Python, PostgreSQL, and Business Intelligence dashboards.
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=flat-square&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Excel](https://img.shields.io/badge/Microsoft_Excel-Advanced_Formulas-217346?style=flat-square&logo=microsoftexcel&logoColor=white)](https://www.microsoft.com/excel)
+
+An end-to-end data analytics project evaluating 350 customer profiles to analyze spending concentration, demographic drivers, retention risks, and behavioral segments using Excel, Python, PostgreSQL, and Power BI.
+
+---
+
+## Executive Dashboard Preview
+
+![Customer Analytics Dashboard Preview](assets/dashboard_preview.png)
 
 ---
 
 ## Workflow Architecture
 
-```
-mermaid
+```mermaid
 flowchart LR
     A[Raw CSV Dataset\nDelimiter: ';'] --> B[Phase 1: Excel\nFeature Engineering: Spender Group]
-    B --> C[Phase 2: Python / Pandas\nCleaning, Scaling, Imputation, IQR]
-    C --> D[(Phase 3: PostgreSQL\nEDA, Window Functions, Segmentation)]
-    D --> E[Phase 4: BI Dashboard\nExecutive & Retention Reporting]
+    B --> C[Phase 2: Python / Pandas\nData Cleaning & Validation]
+    C --> D[(Phase 3: PostgreSQL\nEDA, Ranking, Window Functions)]
+    D --> E[Phase 4: Power BI\nExecutive Reporting & Visuals]
 
 ```
 
 ---
 
-## Tech Stack
+## Key Performance Indicators (KPIs)
 
-* **Data Ingestion & Feature Engineering:** Microsoft Excel
-* **Data Cleaning & Preprocessing:** Python (Pandas, NumPy)
-* **Analytical Querying & Modeling:** PostgreSQL (Window Functions, CTEs, Aggregations)
-* **Visualization & Reporting:** Power BI / Excel Dashboard
-* **Version Control:** Git, GitHub
+| Total Gross Revenue | Active Customer Base | Average Satisfaction | Average Recency | Top Revenue Market |
+| --- | --- | --- | --- | --- |
+| **$5.79M** | **350 Users** | **4.02 / 5.0** | **27 Days** | **Chicago (43%)** |
 
 ---
 
-## Dataset Schema
+## Core Findings & Visual Analytics
 
-The primary dataset consists of 350 customer records across 11 core attributes:
+### 1. Revenue Concentration (Pareto Principle)
 
-| Column Name | Data Type | Description |
-| --- | --- | --- |
-| `Customer ID` | Integer | Unique identifier for each customer |
-| `Age` | Integer | Customer age |
-| `Gender` | String | Customer biological sex (Male, Female, Unknown) |
-| `City` | String | City of residence |
-| `Membership Type` | String | Loyalty tier (Bronze, Silver, Gold) |
-| `Total Spend` | Float | Total lifetime expenditure |
-| `Items Purchased` | Integer | Total units purchased |
-| `Average Rating` | Float | Average satisfaction score |
-| `Satisfaction Level` | String | Customer satisfaction status |
-| `Days Since Last Purchase` | Integer | Inactivity period in days |
-| `Discount Applied` | Boolean | Indicator if a promotional discount was used |
+* **Finding:** High Spenders represent **50% of the customer base but account for ~81% of total gross revenue**.
+* **Demographics:** The **Age 41+** cohort delivers the highest revenue per customer, while **female customers contribute ~60%** of total revenue.
+
+### 2. Retention & Churn Vulnerability
+
+* **Churn Metric:** **26.6% of customers are identified as high churn risk** (inactivity > 30 days combined with average rating < 4.0).
+* **Correlation:** Extended inactivity intervals directly correlate with declining customer satisfaction scores.
+
+### 3. Promotional Exposure
+
+* **Discount Utilization:** **62% of all recorded transactions** had a promotional discount applied, indicating high price sensitivity across segments.
 
 ---
 
-## Data Pipeline & Preprocessing
+## Data Pipeline & Engineering Steps
 
-### 1. Excel Pre-Processing
+### Phase 1: Excel Feature Engineering
 
-* Created the core business variable `Spender Group` using conditional logic to categorize spending tiers (`High Spender`, `Medium Spender`, `Low Spender`).
+Classified customer spending tiers using nested logical formulas prior to database ingestion:
 
-### 2. Python Data Cleaning Pipeline
+* **`High Spender`** | **`Medium Spender`** | **`Low Spender`**
 
-* **Duplicate Removal:** Standard deduplication across unique transaction IDs followed by business-level deduplication across composite attributes:
+### Phase 2: Python Data Cleaning & Validation (Pandas)
+
 ```python
-subset_cols = ['Age', 'City', 'Items Purchased', 'Satisfaction Level', 'Membership Type', 'Average Rating']
+import pandas as pd
+
+# Load dataset with custom delimiter
+df = pd.read_csv("data/raw/customer_data_raw.csv", sep=";")
+
+# 1. Scale Normalization (Resolving single-digit entry errors on a 1-50 base)
+df["Average Rating"] = df["Average Rating"].apply(lambda x: x * 10 if x < 10 else x)
+
+# 2. Categorical and Numerical Imputation
+categorical_cols = ["Gender", "City", "Membership Type", "Satisfaction Level"]
+df[categorical_cols] = df[categorical_cols].fillna("Unknown")
+df["Average Rating"] = df["Average Rating"].fillna(df["Average Rating"].median())
+
+# 3. Business-Logic Deduplication
+subset_cols = ["Age", "City", "Items Purchased", "Satisfaction Level", "Membership Type", "Average Rating"]
 df = df.drop_duplicates(subset=subset_cols)
 
 ```
 
+### Phase 3: PostgreSQL Analytical Queries
 
-* **Scale Normalization:** Corrected scale inconsistencies in the `Average Rating` column (repairing 1–50 reporting anomalies to a standard 10–50 base):
-```python
-df['Average Rating'] = df['Average Rating'].apply(lambda x: x * 10 if x < 10 else x)
+```sql
+-- Churn Risk Identification Query
+SELECT 
+    customer_id,
+    city,
+    membership_type,
+    total_spend,
+    days_since_last_purchase,
+    average_rating,
+    DENSE_RANK() OVER (PARTITION BY city ORDER BY total_spend DESC) AS city_spend_rank
+FROM customer_analytics
+WHERE days_since_last_purchase > 30 
+  AND average_rating < 4.0
+ORDER BY total_spend DESC;
 
 ```
-
-
-* **Missing Value Imputation:**
-* Categorical fields (`Gender`, `City`, `Membership Type`, `Satisfaction Level`): Imputed with `"Unknown"`.
-* Numerical metrics (`Average Rating`): Imputed using the median score.
-
-
-* **Outlier Assessment:** Applied Interquartile Range (IQR) analysis to `Total Spend`. Identified upper-boundary values were retained based on business validation for high-net-worth customers.
-
----
-
-## SQL Analytics (PostgreSQL)
-
-Analytical queries simulate core business intelligence operations:
-
-* **Revenue Distribution:** Aggregating total revenue and transaction volume sliced by `City` and `Membership Type`.
-* **Behavioral Segmentation:** Implementing `CASE WHEN` logic to map customer value bands.
-* **Churn Risk Identification:** Querying inactivity thresholds (`Days Since Last Purchase > 30`) crossed with low satisfaction ratings (`Average Rating < 4`).
-* **Ranking & Partitioning:** Utilizing Window Functions (`RANK()`, `DENSE_RANK()`, `PARTITION BY City`) to identify and isolate top revenue-generating customers per geographic region.
-
----
-
-## Key Metrics & Analytical Findings
-
-### Executive Summary
-
-| Metric | Value | Business Context |
-| --- | --- | --- |
-| **Total Revenue** | 5.79M | Cumulative gross revenue across all cohorts |
-| **Total Customer Base** | 350 | Unique active accounts analyzed |
-| **Average Rating** | 4.02 / 5.0 | Overall customer satisfaction index |
-| **Average Recency** | 27 Days | Mean days since previous transaction |
-| **Primary Revenue Market** | Chicago (43%) | Largest single geographic revenue contributor |
-
-### Revenue & Cohort Insights
-
-* **Pareto Concentration:** High Spenders comprise 50% of the customer count but generate ~81% of total revenue.
-* **Demographic Drivers:**
-* The **Age 41+** cohort delivers the highest revenue per customer despite a smaller volume footprint.
-* **Female customers** account for ~60% of total revenue.
-
-
-* **Tier Upsell Opportunity:** The **Bronze Membership** segment generates the highest overall gross revenue, highlighting a prime target pool for premium tier upgrades.
-* **Retention & Churn Indicators:**
-* **26.6%** of customers exhibit high churn risk (inactivity > 30 days and average rating < 4.0).
-* Extended inactivity intervals strongly correlate with decaying customer review scores.
-
-
-* **Discount Dependency:** 62% of transactions had a discount applied, indicating high promotional reliance.
 
 ---
 
 ## Strategic Business Recommendations
 
-1. **High Spender VIP Protection:** Prioritize dedicated account management and loyalty perks for the top 50% spending tier generating 81% of gross revenue.
-2. **Promotional Margin Optimization:** Review margin erosion caused by the 62% discount utilization rate; shift toward targeted rather than blanket discounting.
-3. **Bronze Tier Conversion Campaign:** Deploy automated marketing funnels to convert high-spending Bronze members into Silver/Gold subscription tiers.
-4. **Automated Churn Win-Back Workflows:** Trigger re-engagement incentives for customers crossing the 30-day inactivity threshold before ratings drop further.
+> [!IMPORTANT]
+> **Priority 1: High Spender VIP Protection Program**
+> Protect the top 50% spender tier responsible for 81% of revenue through personalized account management, exclusive loyalty perks, and dedicated customer support channels.
+
+> [!WARNING]
+> **Priority 2: Automated Churn Win-Back Funnel**
+> Implement automated email/push notifications offering tailored incentives for customers reaching the **30-day inactivity threshold** to prevent sentiment degradation.
+
+> [!TIP]
+> **Priority 3: Bronze-to-Gold Upsell Strategy**
+> Bronze membership generates the highest aggregate gross revenue due to volume. Create targeted tier-upgrade campaigns with tier-exclusive perks to boost margin conversion.
 
 ---
 
@@ -136,46 +128,45 @@ Analytical queries simulate core business intelligence operations:
 ```text
 .
 ├── data/
-│   ├── raw/
-│   │   └── customer_data_raw.csv
-│   └── processed/
-│       └── customer_data_cleaned.csv
+│   ├── raw/                         # Raw CSV input data
+│   └── processed/                   # Cleaned and normalized datasets
 ├── notebooks/
-│   └── data_cleaning_and_validation.ipynb
+│   └── 01_data_cleaning.ipynb       # Python data cleaning pipeline
 ├── sql/
-│   ├── 01_exploratory_queries.sql
-│   ├── 02_segmentation_queries.sql
-│   └── 03_window_ranking_queries.sql
+│   ├── 01_eda_aggregations.sql      # Basic exploratory queries
+│   ├── 02_customer_segmentation.sql # Segmentation and CASE WHEN logic
+│   └── 03_window_functions.sql      # Ranking and partition analysis
 ├── dashboards/
-│   └── customer_analytics_dashboard.pbix
-└── README.md
+│   └── customer_behavior_bi.pbix    # Power BI dashboard file
+├── assets/
+│   └── dashboard_preview.png        # Dashboard screenshot preview
+└── README.md                        # Documentation
 
 ```
 
 ---
 
-## Execution Guide
+## Instructions to Reproduce
 
-### 1. Python Environment Setup
-
+1. **Clone repository:**
 ```bash
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# Linux/macOS:
-source .venv/bin/activate
-
-pip install pandas numpy matplotlib seaborn
+git clone [https://github.com/ChenStormtout/data-analytics-portfolio.git](https://github.com/ChenStormtout/data-analytics-portfolio.git)
+cd data-analytics-portfolio/Customer-Behavior
 
 ```
 
-### 2. Run Cleaning Pipeline
 
-Execute the notebook in `notebooks/data_cleaning_and_validation.ipynb` to process raw CSV records and export the cleaned dataset.
+2. **Execute Python data cleaning:**
+```bash
+pip install pandas numpy
 
-### 3. Load & Query SQL
+```
 
-Import `customer_data_cleaned.csv` into your PostgreSQL instance and execute the script suite in the `sql/` directory.
+
+3. **Run SQL queries:**
+Import `data/processed/customer_data_cleaned.csv` into PostgreSQL and run queries in `/sql`.
+4. **View Visualizations:**
+Open `/dashboards/customer_behavior_bi.pbix` in Power BI Desktop or inspect `/assets/dashboard_preview.png`.
 
 ```
 
