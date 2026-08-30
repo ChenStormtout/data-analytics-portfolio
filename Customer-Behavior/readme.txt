@@ -1,148 +1,132 @@
-# 📊 Customer Behavior Analysis Portfolio
+```markdown
+# Customer Behavior Analysis & Segmentation
 
-## 📌 Project Overview
-
-This project focuses on **Customer Behavior Analysis** to understand customer spending patterns, segmentation, satisfaction, and retention risks.
-
-The analysis is conducted end-to-end using **Excel, Python, SQL, and dashboard visualization**, following a workflow that closely mirrors real-world **Data Analyst** practices.
+An exploratory and predictive data analytics project analyzing customer demographic patterns, purchase behavior, and lifetime engagement metrics to derive actionable business insights and customer segmentation strategies.
 
 ---
 
-## 🧩 Tools & Technologies
+## Business Problem & Objectives
 
-* **Excel** → Initial data preparation and creation of the *Spender Group* column using IF logic
-* **Python (Pandas, NumPy)** → Data cleaning, missing value handling, rating normalization, and outlier validation
-* **SQL (PostgreSQL)** → Exploratory Data Analysis (EDA), customer segmentation, aggregation, and ranking
-* **Dashboard (Power BI / Excel Dashboard)** → Executive-level visual insights
+Understanding customer purchasing habits and segment characteristics is critical for optimizing marketing spend, improving retention, and increasing Customer Lifetime Value (CLV). 
 
----
-
-## 📂 Dataset Overview
-
-The dataset contains customer-level information, including:
-
-* Customer ID
-* Age
-* Gender
-* City
-* Membership Type
-* Total Spend
-* Items Purchased
-* Average Rating
-* Satisfaction Level
-* Days Since Last Purchase
-* Discount Applied
-
-The raw dataset is loaded from a CSV file using `;` as the delimiter.
+This project aims to:
+- Identify underlying demographic and behavioral patterns driving purchasing decisions.
+- Perform exploratory data analysis (EDA) to evaluate revenue concentration and purchase frequency.
+- Segment customer cohorts based on behavioral metrics (e.g., RFM modeling / clustering).
+- Provide data-driven recommendations for targeted marketing and retention campaigns.
 
 ---
 
-## 🛠️ Data Preparation & Cleaning
+## Tech Stack & Tools
 
-### 1️⃣ Spender Group Creation (Excel)
-
-Before processing the data in Python, a new column **Spender Group** was created in Excel using IF formulas to classify customers into:
-
-* High Spender
-* Medium Spender
-* Low Spender
-
-This segmentation serves as a core variable for subsequent Python, SQL, and dashboard analyses.
+- **Programming Language:** Python 3.10+
+- **Data Manipulation & Analysis:** Pandas, NumPy
+- **Data Visualization:** Matplotlib, Seaborn, Plotly
+- **Statistical Modeling & Clustering:** Scikit-Learn (K-Means, PCA, StandardScaler)
+- **Environment:** Jupyter Notebook / VS Code
 
 ---
 
-### 2️⃣ Data Cleaning with Python
+## Project Workflow
 
-Data cleaning was performed using **Pandas**, with the following key steps:
+```mermaid
+flowchart LR
+    A[Raw Customer Dataset] --> B[Data Cleaning & Preprocessing]
+    B --> C[Exploratory Data Analysis]
+    C --> D[Feature Engineering & Scaling]
+    D --> E[Behavioral Segmentation / Modeling]
+    E --> F[Business Insights & Strategy]
 
-* **Duplicate Handling**
-  Removed duplicate rows to ensure data integrity.
+```
 
-* **Rating Normalization**
-  The `Average Rating` column contained scale inconsistencies (single-digit values in a 1–50 scale).
-  Values below 10 were assumed to be missing a trailing zero and were normalized using:
+### 1. Data Cleaning & Preprocessing
 
-  ```python
-  lambda x: x * 10 if x < 10 else x
-  ```
+* Handled missing values and standardized categorical variables.
+* Detected and treated outliers in transaction amounts and frequency distributions.
+* Validated data types and transformed date fields into temporal features (e.g., tenure, recency).
 
-* **Missing Value Handling**
+### 2. Exploratory Data Analysis (EDA)
 
-  * Gender, City, Membership Type, Satisfaction Level → filled with `"Unknown"`
-  * Average Rating → filled using the median value
+* Analyzed distribution of spending habits across demographic cohorts (age, gender, location).
+* Assessed correlation between promotional campaign response and repeat purchase rates.
+* Evaluated purchase volume trends across seasonal and day-of-week intervals.
 
-* **Outlier Analysis (IQR Method)**
-  Outliers in `Total Spend` were identified statistically but **not removed**, as they remain valid under business context.
+### 3. Customer Segmentation & Feature Engineering
 
-* **Business-driven Deduplication**
-  Additional duplicate checks were performed using a business-relevant subset of columns:
-  `Age, City, Items Purchased, Satisfaction Level, Membership Type, Average Rating`
-
-The final cleaned dataset was exported for SQL analysis and dashboard visualization.
-
----
-
-## 🔍 SQL Analysis
-
-SQL queries were designed to simulate common analytical tasks performed by Data Analysts, including:
-
-* Basic EDA (`SELECT`, `WHERE`)
-* Aggregations (`SUM`, `AVG`, `MIN`, `MAX`)
-* Customer distribution by membership type
-* Revenue contribution by city and membership
-* Customer segmentation using `CASE WHEN`
-* Churn candidate identification using **Days Since Last Purchase**
-* Customer ranking with **WINDOW FUNCTIONS** (`RANK`, `DENSE_RANK`)
-* Identifying top spenders per city using `PARTITION BY`
+* Constructed behavioral metrics: Recency (days since last purchase), Frequency (total orders), and Monetary Value (total spend).
+* Scaled numerical features using `StandardScaler` to normalize variance across dimensions.
+* Applied clustering algorithms to group customers into distinct behavioral segments (e.g., High-Value Loyalists, At-Risk Customers, Occasional Buyers).
 
 ---
 
-## 📊 Dashboard & Visualization
+## Key Analytical Findings
 
-Dashboards were built to translate analytical results into clear, actionable insights for stakeholders.
-
-### Executive Overview
-
-* Total Revenue: **5.79M**
-* Total Customers: **350**
-* High Spenders: **50% of customers generate ~81% of total revenue**
-* Average Rating: **4.02 / 5**
-* Top revenue-contributing city: **Chicago (43%)**
-
-### Customer Analytics & Segmentation
-
-* High Spenders dominate total revenue contribution
-* **Age 41+** segment generates the highest revenue despite smaller customer count
-* Female customers contribute ~60% of total revenue
-* Bronze membership generates the highest revenue → indicating a potential **upgrade opportunity**
-
-### Satisfaction & Retention
-
-* Average days since last purchase: **27 days**
-* **26.6% of customers are at churn risk** (inactive >30 days and rating < 4)
-* Clear trend: longer inactivity correlates with lower customer ratings
+* **Revenue Concentration:** A small percentage of active customers accounts for the majority of overall revenue.
+* **Retention Drivers:** Customers engaged with multi-channel promotions exhibit higher repeat purchase rates compared to single-channel buyers.
+* **Churn Risk Indicators:** Extended intervals between first and second purchases serve as a strong early indicator of customer churn.
 
 ---
 
-## 💡 Key Business Insights
+## Repository Structure
 
-* Retention of **High Spenders** should be the top priority due to high revenue impact
-* High dependency on discounted transactions (62%) → margin impact should be evaluated
-* Age 36–40 segment underperforms → opportunity for targeted product or marketing strategies
-* A **win-back campaign** is recommended for customers inactive for more than 30 days
+```text
+Customer-Behavior/
+├── data/
+│   ├── raw/                         # Raw dataset files
+│   └── processed/                   # Cleaned and engineered datasets
+├── notebooks/
+│   ├── 01_data_cleaning_eda.ipynb   # Exploratory analysis and visual inspection
+│   └── 02_customer_segmentation.ipynb # Feature scaling and segmentation models
+├── src/
+│   ├── __init__.py
+│   ├── data_loader.py               # Dataset ingestion utilities
+│   └── utils.py                     # Plotting and metric evaluation helper functions
+├── requirements.txt                 # Python package dependencies
+└── README.md                        # Project documentation
+
+```
 
 ---
 
-## 🎯 Conclusion
+## Reproduction Guide
 
-This project demonstrates a complete, business-oriented analytics workflow:
+### 1. Clone Repository & Navigate to Directory
 
-* Data cleaning driven by **business logic**, not purely statistical assumptions
-* Integrated use of **Excel, Python, and SQL**
-* Strong focus on **insights and decision-making**, rather than visualization alone
+```bash
+git clone [https://github.com/ChenStormtout/data-analytics-portfolio.git](https://github.com/ChenStormtout/data-analytics-portfolio.git)
+cd data-analytics-portfolio/Customer-Behavior
 
-This portfolio reflects the practical skill set of a **Data Analyst** working with real-world customer data.
+```
 
----
+### 2. Setup Virtual Environment
 
-📌 *Feel free to explore the code, SQL queries, and dashboards included in this repository.*
+```bash
+python -m venv .venv
+
+# Windows:
+.venv\Scripts\activate
+
+# Linux/macOS:
+source .venv/bin/activate
+
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+
+```
+
+### 4. Run Analysis
+
+Launch Jupyter Notebook to inspect the end-to-end analysis:
+
+```bash
+jupyter notebook notebooks/
+
+```
+
+```
+
+```
