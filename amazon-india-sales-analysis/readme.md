@@ -1,67 +1,25 @@
-# Amazon India Sales Analysis
+# Amazon India E-Commerce Sales Analytics & Geo-Data Cleansing
 
-datasets : https://drive.google.com/drive/folders/1RPrlzuw_B6GERsiu7S8qXeaNV7jxXwc4?usp=drive_link
+[![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=flat-square&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Power Query](https://img.shields.io/badge/Power_Query-M_Engine-217346?style=flat-square&logo=microsoftexcel&logoColor=white)](https://learn.microsoft.com/en-us/power-query/)
+[![SQL](https://img.shields.io/badge/SQL-Analytics-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://en.wikipedia.org/wiki/SQL)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 
-## Overview
-This project analyzes Amazon India sales transaction data containing approximately **120,000+ rows**.
-The dataset represents real-world e-commerce transactions and includes significant **data quality challenges**, particularly in geographic fields.
-
-The main objective of this project is to clean, transform, and analyze the data to generate meaningful business insights using business intelligence and analytics tools.
-
----
-
-## Dataset Characteristics
-- ~120,000 transaction records
-- Sales data from India
-- Multiple product categories and order statuses
-- High data noise:
-  - Thousands of city name typos
-  - Inconsistent city and state naming formats
-  - Mixed casing and spelling variations
-
-This dataset closely reflects real-world messy data commonly encountered in business environments.
+An end-to-end business intelligence and data quality engineering project analyzing 120,000+ real-world Amazon India sales transactions. The project focuses on resolving severe geographic data noise (thousands of city/state typos and casing variations) via Power Query and Python, building a relational star-schema data model, and delivering an interactive Power BI dashboard for executive revenue and fulfillment tracking.
 
 ---
 
-## Data Cleaning & Preparation
-Data cleaning and transformation were primarily performed using **Power Query**, with a focus on practical and repeatable transformations suitable for BI workflows.
+## Executive Dashboard Preview
 
-Key cleaning steps:
-- Standardizing city and state names
-- Handling thousands of city name typos through normalization and grouping
-- Cleaning inconsistent text formats (case, spacing, spelling)
-- Creating cleaned columns for analysis
-- Preparing structured data for analysis and visualization
-
-The goal of the cleaning process was not perfect normalization, but **usable and reliable analytical data**.
+![Amazon India Sales Dashboard Preview](assets/dashboard_preview.png)
 
 ---
 
-## Tools Used
-- **Power BI** – Data modeling, dashboards, and KPI analysis
-- **Power Query** – Data cleaning and transformation
-- **SQL** – Exploratory analysis and aggregations
-- **Python (Pandas, NumPy)** – Additional data inspection and preprocessing
-- **Excel** – Initial data inspection and validation
+## Pipeline & Modeling Architecture
 
----
-
-## Key Analysis Topics
-- Sales performance by state and city
-- Regional order distribution
-- Product category performance
-- Promotion-related sales patterns
-- Size-level and category-level sales insights
-
----
-
-## Output
-- Interactive Power BI dashboard
-- Cleaned and transformed dataset
-- Reusable data cleaning pipeline using Power Query
-
----
-
-## Notes
-This project focuses on **realistic data challenges** and practical data cleaning approaches commonly used in business intelligence workflows.
-
+```mermaid
+flowchart LR
+    A[Raw CSV Dataset\n120,000+ Records] --> B[Data Cleansing & Geo-Normalization\nPower Query & Python Pandas]
+    B --> C[(Relational Data Model\nStar Schema: Facts & Dimensions)]
+    C --> D[SQL Exploratory Analytics\nCohort & Fulfillment Queries]
+    D --> E[Power BI Interactive Dashboard\nDAX Measures & Geo Analysis]
