@@ -1,4 +1,4 @@
-```markdown
+
 # Customer Behavior Analysis & Segmentation
 
 An exploratory and predictive data analytics project analyzing customer demographic patterns, purchase behavior, and lifetime engagement metrics to derive actionable business insights and customer segmentation strategies.
